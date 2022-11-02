@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    width:100%;
+    background: url("back.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    /* background: rgb(134,129,218);
+    background: linear-gradient(90deg, rgba(134,129,218,1) 0%, rgba(103,103,218,1) 48%, rgba(0,212,255,1) 100%);  */
+}
+/* .tittle{
+    font-family: 'Sans serif';
+    color: rgb(218, 216, 217);
+    font-size: 30px;
+    padding-top: 25px;
+    float: center;
+} */
+/* .classifier{
+    font-family: "Arial";
+    font-size: 15px;
+    padding-left: 15px;
+    padding-top: 30px;
+    color: black;
+    /* float: left; */
+/* } */ */
+.dropdown{
+    padding-left: 15px;
+    padding-top: 10px;
+    
+}
+.abs-center-x {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
