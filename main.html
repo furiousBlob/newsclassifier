@@ -1,0 +1,29 @@
+<head>
+    <title>News Category Classifier</title>
+    <center><h1>News Category Classifier</h1></center>
+</head>
+<h2>Choose a Classifier</h2>
+<div class="select">
+   <select name="format" id="format">
+      <option selected disabled>Select</option>
+      <option href ="english.html" value="english">English News Clasiifier</option>
+      <option href ="nepali.html" value="nepali">Nepali News Classifier</option>
+   </select>
+</div>
+<br>
+
+<script>
+	var urlMenu = document.getElementById('format');
+	urlMenu.onchange = function()
+	{
+	var userOption = this.options[this.selectedIndex];
+	if (userOption.value != "nothing")
+	{
+	window.open(userOption.value, "");
+	}
+	
+	}
+	
+</script>
+
+

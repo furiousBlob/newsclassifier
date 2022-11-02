@@ -1,0 +1,41 @@
+<head>
+    <title> News Category Classifier</title>
+    <center><h1>English News Category Classifier</h1></center>
+</head>
+
+<form action="{{ url_for('english') }}" method="POST" align="center">
+	<fieldset>
+			
+		<legend>
+			<b>Enter news text to classify news into the following categories</b>				
+		</legend>
+				
+		'BUSINESS', 'TECHNOLOGY', 'POLITICS', 'SPORTS' and 'ENTERTAINMENT'
+		<br><br>
+				
+		Have fun!
+		<br><br>
+				
+		News Text:
+		<br><br>
+				
+		<input id="text_field" name="news_text" type="text" required> 
+				
+		<center>
+			<input id="submit_button" type="Submit" class="push_button blue">
+		</center>
+				
+	</fieldset>
+</form>
+
+<div class="prediction" align="center">
+	{% if prediction %}
+		{% for key, value in original_input.items() %}
+			<b>{{ key }}</b> : {{ value }}
+		{% endfor %}
+		<br>
+		<br> 
+		<p style="font-size:20px"><b>Predicted News Category: </b></p>
+		<p style="font-size:50px">{{ prediction }}</p>
+	{% endif %}
+</div>
