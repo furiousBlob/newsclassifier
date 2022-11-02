@@ -45,10 +45,10 @@
     <div class="main">
         <div class="py-4 px-4">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-6"  >
               <div class="card">
-                <h5 class="card-header">English News Clasiifier</h5>
-                <div class="card-body">
+                <h5 class="card-header border border-dark">English News Clasiifier</h5>
+                <div class="card-body border border-dark"">
                   <form action="{{ url_for('english') }}" method="POST" align="center">
                     <fieldset>
                             
@@ -64,68 +64,101 @@
                                 
                         News Text:
                         <div class="mt-2">                                
-                        <input id="text_field" name="news_text" type="text" class="w-100" required> 
+                        <input id="text_field" name="news_text" type="text" class="w-100" style="height: 40px;" required> 
                         </div>
                         <div class="mt-3">      
                         <center>
-                            <input id="submit_button" type="Submit" class="push_button blue btn  btn-outline-primary">
+							<!-- <li> <button class="btn1">Schedule a demo</button> </li> -->
+                            <input id="submit_button" type="Submit" class="push_button blue btn1">
                             <!-- <a href="#" class="btn btn-primary push_button blue" id="submit_button" type="Submit">Submit</a> -->
                         </center>
                         </div>
                                 
                     </fieldset>
                 </form>
+				<div class=" mt-2 border border-dark">
+					<div class="card">
+						<h5 class="card-header" >Results</h5>
+					  <div class="card-body">
+						<div class="prediction" >
+							{% if prediction %}
+								{% for key, value in original_input.items() %}
+									<b>{{ key }}</b> : {{ value }}
+								{% endfor %}
+								<br>
+								<br> 
+								<p style="font-size:20px"><b>Predicted News Category: </b></p>
+								<p style="font-size:50px">{{ prediction }}</p>
+							{% endif %}
+						</div>
+					  </div>
+					</div>
+				  </div>
                 </div>
               </div>
             </div>
             <div class="col-sm-6">
               <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+				<h5 class="card-header border border-dark">Nepali News Clasiifier</h5>
+                <div class="card-body border border-dark">
+                  
+				  <form action="{{ url_for('nepali') }}" method="POST" align="center">
+					<fieldset>
+							
+						<legend>
+							<!-- <b>Enter news text to classify news into the following categories</b>	 -->
+							<b>निम्न वर्गहरूमा समाचार वर्गीकरण गर्न समाचार पाठ प्रविष्ट गर्नुहोस्</b>			
+						</legend>
+								
+						<!-- 'ENTERTAINMENT', 'BUSINESS' and 'SPORTS'  -->
+						'मनोरञ्जन', 'व्यापार' र 'खेलकुद'
+						<br><br>
+								
+						Have fun!
+						<br><br>
+						News Text:
+                        <div class="mt-2">                                
+                        <input id="text_field" name="news_text" type="text" class="w-100" style="height: 40px;" required> 
+                        </div>
+                        <div class="mt-3">      
+                        <center>
+                            <input id="submit_button" type="Submit" class="push_button blue btn1" >
+                            <!-- <a href="#" class="btn btn-primary push_button blue" id="submit_button" type="Submit">Submit</a> -->
+                        </center>
+                        </div>
+								
+					</fieldset>
+				</form>
+				<div class="mt-2">
+					<div class="card border border-dark">
+						<h5 class="card-header">परिणाम</h5>
+					  <div class="card-body">
+						<div class="prediction">
+							{% if prediction %}
+								{% for key, value in original_input.items() %}
+									<b>{{ key }}</b> : {{ value }}
+								{% endfor %}
+								<br>
+								<br> 
+								<p style="font-size:20px"><b>Predicted News Category: </b></p>
+								<p style="font-size:50px">{{ prediction }}</p>
+							{% endif %}
+						</div>
+					  </div>
+					</div>
+				  </div>
+				
+				
+				
+                  <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a> -->
                 </div>
               </div>
             </div>
-          </div>
-          <div class="row mt-4">
-            <div class="col-sm-6">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="prediction" align="center">
-                        {% if prediction %}
-                            {% for key, value in original_input.items() %}
-                                <b>{{ key }}</b> : {{ value }}
-                            {% endfor %}
-                            <br>
-                            <br> 
-                            <p style="font-size:20px"><b>Predicted News Category: </b></p>
-                            <p style="font-size:50px">{{ prediction }}</p>
-                        {% endif %}
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
+          </div>    
+          
         </div>
-        <br>
-        <div class="tittle">
-        <center><h1>NEWS CATEGORY CLASSIFIER</h1></center>
-        </div>
-        <br>
-        <div class ="classifier">
-        <h2>Choose a Classifier</h2>
-        </div>
-        <br>
-    <div class="dropdown">
-    <div class="select">
-       <select name="format" id="format">
-          <option selected disabled>Select</option>
-          <option href ="english.html" value="english">English News Clasiifier</option>
-          <option href ="nepali.html" value="nepali">Nepali News Classifier</option>
-       </select>
-    </div>
-    </div>
+        
     </div>
     <br>
     
