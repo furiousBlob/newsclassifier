@@ -1,1 +1,2 @@
-# newsclassifier
+# English and Nepali Newsclassifier
+
